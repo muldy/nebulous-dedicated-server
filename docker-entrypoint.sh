@@ -1,4 +1,3 @@
 #! /bin/bash
-cd /home/steam/neb/
-ls -la 
+find /home/steam/neb/ -name "steamclient.so"
 ./NebulousDedicatedServer

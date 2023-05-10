@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<SkirmishDedicatedServerConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+        <!--
+
+        This is an example configuration file for a N:FC Dedicated Server.
+        This configuration file is included with the default installation of the server and is 
+        tracked by Steam's installation system.  If you modify it, it may be overwritten without
+        warning.  It is recommended that you copy this file and give it a descriptive name.
+        When starting your server, use the -serverConfig Path/To/File/MyServerConfig.xml argument
+        to specify the config to use.
+
+        -->
+
+        <!-- Name of your server as you want it to appear in the server browser.  -->
+        <ServerName>ASMR Space Battles (NO ENGINES)</ServerName>
+
+        <!-- Optional password -->
+        <!-- <Password>1234</Password> -->
+
+        <!-- Maximum number of players allowed to connect.  The number of players per team is still decided by the map -->
+        <MaxPlayers>10</MaxPlayers>
+
+        <!-- 
+        This is the port all gameplay traffic will be sent over.  
+        It must be open for TCP in/out. 
+        When using the Direct Join button, this is the port you put at the end of the IP.
+        -->
+        <GamePort>7777</GamePort>
+        <!-- 
+        This is the port the Steam server browser will query your server on.  
+        Must be open for UDP inbound.  If this port is filtered your server will not be visible. 
+        -->
+        <QueryPort>27016</QueryPort>
+
+        <!-- The number of players that must be present on each team before the game can start. -->
+        <TeamSizeToStart>2</TeamSizeToStart>
+
+        <!-- This message is sent to each player who joins. -->
+        <MOTD>-- Welcome to ASMR Space Battles (NO ENGINES) --
+Put a descriptive message welcoming players to your server here.  Describe your rules, game start conditions, map rotation, etc.
+        </MOTD>
+
+        <!-- 
+        Listed 64-bit Steam ID's will be registered as admins and can execute ! commands 
+        on the server without requiring a vote. They will also have the Host badge next to their
+        name in the lobby.
+        -->
+        <Admins>
+                <!-- <unsignedLong>0</unsignedLong> -->
+        </Admins>
+
+        <!-- Players can votes on maps, scenarios, and rules by default.  Uncomment this line to disable it. -->
+        <!-- <AllowMapVoting>false</AllowMapVoting> -->
+
+        <!-- 
+        Sets the time limit for games.  Leave out or at 0 for unlimited time. 
+        Value indexes into list of possible time settings, starting at 0.
+        It is NOT a minutes value.
+        -->
+        <!-- <TimeLimit>0</TimeLimit> -->
+
+        <!-- 
+        Sets whether the server will enforce uniform factions on teams.  Leave
+        out to use default value of true.
+        -->
+        <!-- <RequireUniformTeams>false</RequireUniformTeams> -->
+
+        <!-- Only one scenario can be selected for the server.  You can select it by name or key -->
+        <Scenario>Control</Scenario>
+
+        <!-- 
+        Change settings for the scenario here, otherwise defaults will be used.
+        Each setting is selected using a Key, which is the name of the setting as it appears
+        in the lobby settings list.
+        The Value field is an integer index into the list of options, starting at 0.
+        The example below sets the Control victory points to 1500, because it is the third option in the list.
+        -->
+        <!-- <ScenarioSettings>
+                <Setting>
+                        <Key>Victory Points</Key>
+                        <Value>2</Value>
+                </Setting>
+        </ScenarioSettings> -->
+
+        <!-- List all maps in the map rotation here. Add by name or key. -->
+        <Maps>
+                <string>Pillars</string>
+        </Maps>
+
+        <!-- Defines the order the maps will be selected in.  Options are Sequential and Random. -->
+        <MapRotation>Sequential</MapRotation>
+
+        <!-- 
+        Bots listed here will be created each time the server returns to the lobby.
+        Only the Team field is required.  Everything else can be left blank and colors, fleet, and badge will
+        be chosen randomly for each bot.
+        -->
+        <!-- <Bots>
+                <Bot>
+                        <Team>TeamB</Team>
+                        <Colors>
+                                <BaseColor>
+                                        <r>1</r>
+                                        <g>1</g>
+                                        <b>1</b>
+                                        <a>1</a>
+                                </BaseColor>
+                                <StripeColor>
+                                        <r>1</r>
+                                        <g>1</g>
+                                        <b>1</b>
+                                        <a>1</a>
+                                </StripeColor>
+                                <Prefix>OSPN</Prefix>
+                        </Colors>
+                        <Badge>OSP_Roundel</Badge>
+                        <Fleet>Starter Fleets - Alliance/TF Oak.fleet</Fleet>
+                </Bot>
+        </Bots> -->
+
+        <!-- 
+        If this is set to true, your server will show the "Mod Friendly" icon.
+        This setting MUST be enabled in order for players to use modded fleets.
+        The list of permitted mods is found below.
+        -->
+        <!-- <AllowModdedFleets>true</AllowModdedFleets> -->
+
+        <!--
+        Enable mods for your server here.
+        Provide the Steam ID of the mod, which can be found in its workshop URL.
+        Any mod found in this list will be permitted for use in a player fleet, but only if AllowModdedFleets
+        is set to true.
+        If you intend to use modded maps in your rotation, they must be included here as well.
+        -->
+        <!-- <Mods>
+                <unsignedLong>0</unsignedLong>
+                <unsignedLong>0</unsignedLong>
+        </Mods> -->
+</SkirmishDedicatedServerConfig>

@@ -1,0 +1,28 @@
+---
+version: "3.8"
+services:
+  nebulous:
+    image: nebulous:latest
+    container_name: nebulous-server
+#    deploy:
+#      resources:
+#        limits:
+#          cpus: '0.50'
+#          memory: 600M
+#        reservations:
+#          cpus: '0.25'
+#          memory: 500M
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - tz=Europe/Lisbon
+    devices:
+      #intel
+      - /dev/dri/:/dev/dri/
+    volumes:
+      - ./DedicatedServerConfig.xml:/home/steam/neb/DedicatedServerConfig.xml
+    ports:
+      - "27016:27016/udp" # steam query
+      - "7777:7777/tcp" # game main
+      - "56211:56211" #debugger
+    restart: unless-stopped
