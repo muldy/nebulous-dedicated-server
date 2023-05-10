@@ -1,6 +1,6 @@
 from steamcmd/steamcmd:ubuntu-22
 
-#VOLUME /home/steam/neb/DedicatedServerConfig.xml
+VOLUME /home/steam/neb/DedicatedServerConfig.xml
 VOLUME /home/steam/neb/NebulousDedicatedServer_Data
 
 RUN useradd -ms /bin/bash steam
@@ -20,7 +20,7 @@ RUN chown steam /root/.steam/sdk64/
 RUN chown steam /root/.steam/
 RUN chown steam /root/
 
-#RUN mv /home/steam/neb/DedicatedServerConfig.xml /home/steam/neb/DedicatedServerConfig_sample.xml
+RUN mv /home/steam/neb/DedicatedServerConfig.xml /home/steam/neb/DedicatedServerConfig_sample.xml
 
 USER steam
 WORKDIR /home/steam/neb
