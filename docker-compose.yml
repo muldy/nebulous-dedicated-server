@@ -23,6 +23,9 @@ services:
       - ./DedicatedServerConfig.xml:/home/steam/neb/DedicatedServerConfig.xml
     ports:
       - "27016:27016/udp" # steam query
+      - "27016:27016/tcp" # steam query
+      - "27017:27017/udp" # steam query
+      - "27017:27017/tcp" # steam query
       - "7777:7777/tcp" # game main
       - "56211:56211" #debugger
     restart: unless-stopped

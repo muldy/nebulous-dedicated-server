@@ -29,5 +29,8 @@ COPY docker-entrypoint.sh /home/steam/neb/
 
 EXPOSE 7777/tcp
 EXPOSE 27016/udp
+EXPOSE 27016/tcp
+EXPOSE 27017/udp
+EXPOSE 27017/tcp
 ENTRYPOINT ["/home/steam/neb/docker-entrypoint.sh"]
 
