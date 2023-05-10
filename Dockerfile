@@ -1,7 +1,6 @@
 from steamcmd/steamcmd:ubuntu-22
 
-VOLUME /home/steam/neb/DedicatedServerConfig.xml
-VOLUME /home/steam/neb/NebulousDedicatedServer_Data
+VOLUME "/home/steam/neb/DedicatedServerConfig.xml", "/home/steam/neb/NebulousDedicatedServer_Data"
 
 RUN useradd -ms /bin/bash steam
 
@@ -32,5 +31,5 @@ EXPOSE 27016/udp
 EXPOSE 27016/tcp
 EXPOSE 27017/udp
 EXPOSE 27017/tcp
-ENTRYPOINT ["/home/steam/neb/docker-entrypoint.sh"]
 
+ENTRYPOINT ["/home/steam/neb/docker-entrypoint.sh"]
