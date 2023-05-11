@@ -2,6 +2,8 @@ from steamcmd/steamcmd:ubuntu-22
 
 VOLUME "/home/steam/neb/DedicatedServerConfig.xml", "/home/steam/neb/NebulousDedicatedServer_Data"
 
+RUN apt update && apt install libxml2-utils -y 
+
 RUN useradd -ms /bin/bash steam
 
 RUN mkdir -p /root/.steam/sdk64/
